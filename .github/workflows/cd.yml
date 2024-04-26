@@ -71,7 +71,7 @@ jobs:
         run: |
           .github/workflows/utils/generate-manifests.sh "$HELM_PATH" "$CONFIGS_PATH" "$MANIFESTS_PATH"
         env:
-          HELM_PATH: ${{ github.workspace }}/helmcharts
+          HELM_PATH: ${{ github.workspace }}/helm
           CONFIGS_PATH: ${{ github.workspace }}/configs  
           MANIFESTS_PATH: ${{ github.workspace }}/manifests
           WORKLOAD: ${{ github.event.repository.name }}
