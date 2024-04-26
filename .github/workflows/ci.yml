@@ -37,8 +37,6 @@ jobs:
         push: true
         context: .
         tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}, ${{ env.IMAGE_NAME }}:latest  
-    outputs:
-        image_tag: ${{ steps.generate_image_tag.outputs.image_tag }}
 
     - name: Start CD
       run: |
