@@ -38,6 +38,7 @@ jobs:
   Deploy:
       name: "Deploy"
       runs-on: ubuntu-latest
+      permissions: write-all
       environment: ${{ inputs.environment }}
       steps:      
 
