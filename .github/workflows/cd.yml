@@ -27,11 +27,11 @@ on:
       image_tag:
         required: true
         type: string
-        description: 'Image tag (a91af7de6e31afc3c1d342a9b8659ee3976c71aa)'
+        description: 'Image tag'
       version:
         required: true
         type: string
-        description: 'Version (e.g. 0.0.150)'
+        description: 'Version (e.g. 0.0.1-15)'
 
 
 jobs:
