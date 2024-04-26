@@ -83,6 +83,8 @@ jobs:
           VERSION: ${{ env.VERSION }}
           SRC_COMMIT: ${{ inputs.commit_id }}          
           CONFIG_REVISION: ${{ env.CONFIG_COMMIT_ID}}
+          IMAGE_NAME: ghcr.io/${{ github.repository }}/${{ github.event.repository.name }}
+
 
 
       - name: Create PR
