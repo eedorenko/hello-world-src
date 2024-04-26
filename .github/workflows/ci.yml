@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  invoke_deploy:
+    runs-on: ubuntu-latest
+    steps:   
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Start CD
+      run: |
+          gh workflow run cd.yml -f environment="$START_ENVIRONMENT" -f commit_id="$PROMOTED_COMMIT_ID" -f image_tag="$IMAGE_TAG" -f version="$VERSION"         
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PROMOTED_COMMIT_ID: ${{ github.sha }}
+        START_ENVIRONMENT: dev
+        IMAGE_TAG: ${{ github.sha }}       
+        VERSION: 0.0.${{github.run_number}}
+
