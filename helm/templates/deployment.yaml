@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: {{  .Values.app.name}}-deployment
   annotations:
-    version: {{  .Values.namespace}}
-  {{ if .Values.server }}    
+    version: {{  .Values.version}}
+  {{ if .Values.namespace }}    
   namesapce: {{  .Values.namespace}}
   {{ end }}
 spec:
